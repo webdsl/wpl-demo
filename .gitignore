@@ -1,0 +1,9 @@
+.cache
+.classpath
+.dependencies.webdsl
+.saved-but-not-built
+.servletapp
+.settings
+.webdsl-fragment-cache
+WebContent
+.webdsl-parsecache
