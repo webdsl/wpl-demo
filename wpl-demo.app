@@ -1,5 +1,7 @@
 application wpldemo
 
+imports services
+
 page root {
   navigate overrideTest(){ "override test" }
   navigate types() { "types" }
