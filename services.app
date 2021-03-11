@@ -56,7 +56,7 @@ access control rules
   // use page rules for services
   rule page users(){ true }
   rule page addUser(){ true }
-
+  rule page getUser( user: TestService ){ true }
 
 section test data
 

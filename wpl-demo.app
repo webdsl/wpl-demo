@@ -229,9 +229,27 @@ principal is User with credentials username, password
 
 access control rules
   rule page root{ true }
-  rule page *(*){ true }
   rule page loggedInPage{ loggedIn() }
   rule template loggedInTemplate{ loggedIn() }
+  rule page accessControl{ true }
+
+// for the demo pages
+access control rules
+  // you can use wildcard in a local test setting: rule page *(*){ true }
+  // however, in real apps you want to have rules explicit for every page
+  // to avoid accidentally allowing access to a page
+  rule page overrideTest { true }
+  rule page types { true }
+  rule page bidirectional { true }
+  rule page typesWithStyling { true }
+  rule page testExpressions { true }
+  rule page dataValidation{ true }
+  rule page testSession { true }
+  rule page accessControl { true }
+  rule page emailTest { true }
+  rule page ajaxTest { true }
+  rule page ajaxPartialPageRefresh { true }
+
 section
 
 page accessControl {
