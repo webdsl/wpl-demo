@@ -25,7 +25,7 @@ service users(){
 
 // GET parameters can be provided in the URL with:
 // servicename/arg1/arg2 or servicename?param1=arg1&param2=arg2
-// test with: curl -d '{"name":"WebDSL", "number":"42"}' -H "Content-Type: application/json" -X POST http://localhost:8080/wpl-demo/addUser
+// test with: curl http://localhost:8080/wpl-demo/getUser/[insert one of the ids]
 service getUser( user: TestService ){
   var o := JSONObject();
   o.put( "id", user.id );
@@ -35,7 +35,7 @@ service getUser( user: TestService ){
 }
 
 // POST data can be retrieved using readRequestBody()
-// test with: curl http://localhost:8080/wpl-demo/getUser/[insert one of the ids]
+// test with: curl -d '{"name":"WebDSL", "number":"42"}' -H "Content-Type: application/json" -X POST http://localhost:8080/wpl-demo/addUser
 service addUser(){
   if( getHttpMethod() == "POST" ){
     var body := readRequestBody();
