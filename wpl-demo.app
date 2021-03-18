@@ -1,6 +1,7 @@
 application wpldemo
 
 imports services
+imports bootstrap-icons
 
 page root {
   navigate overrideTest(){ "override test" }
@@ -14,6 +15,7 @@ page root {
   navigate url( navigate( emailTest() ) + "?nocache" ){ "email" }
   navigate ajaxTest(){ "ajax templates" }
   navigate ajaxPartialPageRefresh(){ "ajax partial page refresh" }
+  navigate iconsTest(){ "icons" }
 }
 
 
