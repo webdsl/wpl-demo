@@ -222,7 +222,10 @@ page bidirectional {
 section authentication and access control
 
 entity User {
-  username : String (name)
+  username : String (id, name, iderror = "username taken", idemptyerror = "username required" )
+                    // id annotation enforces unique and non-empty, and property gets used for cleaner URLs
+                    // iderror and idemptyerror customize the error messages for the unique and non-empty checks
+                    // name annotation controls how entities are shown in UI elements such as dropdowns
   password : Secret
   wants    : {Item}  // instead of session entity
 }
